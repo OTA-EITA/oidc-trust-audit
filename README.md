@@ -135,7 +135,7 @@ jobs:
           role-to-assume: arn:aws:iam::111122223333:role/iam-read-only-audit
           aws-region: ap-northeast-1
       - run: aws iam get-account-authorization-details --filter Role > roles.json
-      - uses: OTA-EITA/oidc-trust-audit@v0.1.0
+      - uses: OTA-EITA/oidc-trust-audit@v0.1.1
         with:
           files: roles.json
           fail-on: high
