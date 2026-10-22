@@ -1,6 +1,7 @@
 # oidc-trust-audit
 
 [![ci](https://github.com/OTA-EITA/oidc-trust-audit/actions/workflows/ci.yml/badge.svg)](https://github.com/OTA-EITA/oidc-trust-audit/actions/workflows/ci.yml)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/OTA-EITA/oidc-trust-audit/badge)](https://securityscorecards.dev/viewer/?uri=github.com/OTA-EITA/oidc-trust-audit)
 
 GitHub Actions や EKS の ServiceAccount から、OIDC でクラウドに入る**信頼関係の設定ミス**を検出する CLI です。
 AWS IAM ロールの信頼ポリシーと、Google Cloud の Workload Identity Federation プロバイダを対象にしています。
