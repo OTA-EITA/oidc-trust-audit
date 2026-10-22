@@ -1,0 +1,7 @@
+{
+  "Role": {
+    "RoleName": "gha-prefix",
+    "Arn": "arn:aws:iam::111122223333:role/gha-prefix",
+    "AssumeRolePolicyDocument": "%7B%22Version%22%3A%20%222012-10-17%22%2C%20%22Statement%22%3A%20%5B%7B%22Effect%22%3A%20%22Allow%22%2C%20%22Principal%22%3A%20%7B%22Federated%22%3A%20%22arn%3Aaws%3Aiam%3A%3A111122223333%3Aoidc-provider/token.actions.githubusercontent.com%22%7D%2C%20%22Action%22%3A%20%22sts%3AAssumeRoleWithWebIdentity%22%2C%20%22Condition%22%3A%20%7B%22StringLike%22%3A%20%7B%22token.actions.githubusercontent.com%3Asub%22%3A%20%22repo%3Aexample-org%2A/%2A%22%7D%7D%7D%5D%7D"
+  }
+}

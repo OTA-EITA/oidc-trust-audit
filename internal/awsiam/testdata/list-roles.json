@@ -1,0 +1,12 @@
+{
+  "Roles": [
+    {
+      "RoleName": "open-to-world",
+      "Arn": "arn:aws:iam::111122223333:role/open-to-world",
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [{"Effect": "Allow", "Principal": "*", "Action": "sts:AssumeRole"}]
+      }
+    }
+  ]
+}

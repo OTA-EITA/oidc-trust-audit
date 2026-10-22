@@ -1,0 +1,56 @@
+{
+  "RoleDetailList": [
+    {
+      "RoleName": "gha-no-sub",
+      "Arn": "arn:aws:iam::111122223333:role/gha-no-sub",
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [{
+          "Effect": "Allow",
+          "Principal": {"Federated": "arn:aws:iam::111122223333:oidc-provider/token.actions.githubusercontent.com"},
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {"StringEquals": {"token.actions.githubusercontent.com:aud": "sts.amazonaws.com"}}
+        }]
+      }
+    },
+    {
+      "RoleName": "gha-prod-deploy",
+      "Arn": "arn:aws:iam::111122223333:role/gha-prod-deploy",
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": {
+          "Effect": "Allow",
+          "Principal": {"Federated": "arn:aws:iam::111122223333:oidc-provider/token.actions.githubusercontent.com"},
+          "Action": ["sts:AssumeRoleWithWebIdentity"],
+          "Condition": {
+            "StringEquals": {
+              "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+              "token.actions.githubusercontent.com:sub": "repo:example-org/api:environment:production"
+            }
+          }
+        }
+      }
+    },
+    {
+      "RoleName": "irsa-any-namespace",
+      "Arn": "arn:aws:iam::111122223333:role/irsa-any-namespace",
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [{
+          "Effect": "Allow",
+          "Principal": {"Federated": "arn:aws:iam::111122223333:oidc-provider/oidc.eks.ap-northeast-1.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE"},
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {"StringLike": {"oidc.eks.ap-northeast-1.amazonaws.com/id/EXAMPLED539D4633E53DE1B71EXAMPLE:sub": "system:serviceaccount:*:external-dns"}}
+        }]
+      }
+    },
+    {
+      "RoleName": "ec2-instance",
+      "Arn": "arn:aws:iam::111122223333:role/ec2-instance",
+      "AssumeRolePolicyDocument": {
+        "Version": "2012-10-17",
+        "Statement": [{"Effect": "Allow", "Principal": {"Service": "ec2.amazonaws.com"}, "Action": "sts:AssumeRole"}]
+      }
+    }
+  ]
+}
