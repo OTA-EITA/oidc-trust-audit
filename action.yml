@@ -18,7 +18,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - uses: actions/setup-go@v6
+    - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
       with:
         go-version: stable
         cache: false
@@ -39,7 +39,7 @@ runs:
         # shellcheck disable=SC2086
         "$(go env GOPATH)/bin/oidc-trust-audit" --output markdown --quiet $FILES >> "$GITHUB_STEP_SUMMARY" || true
     - if: inputs.upload-sarif == 'true'
-      uses: github/codeql-action/upload-sarif@v3
+      uses: github/codeql-action/upload-sarif@4bfa242aa49c5f7c6770b98670d354a7dfac05f8 # v3
       with:
         sarif_file: oidc-trust-audit.sarif
         category: oidc-trust-audit
