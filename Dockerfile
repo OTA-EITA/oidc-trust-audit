@@ -1,6 +1,6 @@
 FROM golang:1.25 AS build
 WORKDIR /src
-COPY go.mod go.sum ./
+COPY go.* ./
 RUN go mod download
 COPY . .
 ARG VERSION=dev
