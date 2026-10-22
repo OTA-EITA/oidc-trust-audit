@@ -1,0 +1,32 @@
+[
+  {
+    "name": "projects/123456789/locations/global/workloadIdentityPools/github/providers/open",
+    "displayName": "open",
+    "state": "ACTIVE",
+    "attributeMapping": {"google.subject": "assertion.sub", "attribute.repository": "assertion.repository"},
+    "oidc": {"issuerUri": "https://token.actions.githubusercontent.com"}
+  },
+  {
+    "name": "projects/123456789/locations/global/workloadIdentityPools/github/providers/prefix",
+    "state": "ACTIVE",
+    "attributeCondition": "assertion.repository.startsWith('example-org')",
+    "oidc": {"issuerUri": "https://token.actions.githubusercontent.com"}
+  },
+  {
+    "name": "projects/123456789/locations/global/workloadIdentityPools/github/providers/by-id",
+    "state": "ACTIVE",
+    "attributeCondition": "assertion.repository_owner_id == '87654321' && assertion.ref == 'refs/heads/main'",
+    "oidc": {"issuerUri": "https://token.actions.githubusercontent.com/"}
+  },
+  {
+    "name": "projects/123456789/locations/global/workloadIdentityPools/github/providers/old",
+    "state": "ACTIVE",
+    "disabled": true,
+    "oidc": {"issuerUri": "https://token.actions.githubusercontent.com"}
+  },
+  {
+    "name": "projects/123456789/locations/global/workloadIdentityPools/gitlab/providers/gitlab",
+    "state": "ACTIVE",
+    "oidc": {"issuerUri": "https://gitlab.com"}
+  }
+]
